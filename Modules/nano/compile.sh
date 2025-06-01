@@ -12,7 +12,7 @@ NCURSES_VERSION=5.9
 
 if [ ! -d ncurses-$NCURSES_VERSION ]
 then
-	wget ftp://ftp.invisible-island.net/ncurses/ncurses-$NCURSES_VERSION.tar.gz
+	wget https://ftp.gnu.org/gnu/ncurses/ncurses-${NCURSES_VERSION}.tar.gz
 	tar xf ncurses-$NCURSES_VERSION.tar.gz
 fi
 
