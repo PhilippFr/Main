@@ -2,6 +2,10 @@
 
 set -e # fail out if any step fails
 
+# Clean previous build files
+shopt -s extglob
+rm -rf -- !(compile.sh)
+
 . ../../setCompilePath.sh
 
 if [ ! -d portable/.git ]; then
@@ -15,5 +19,6 @@ fi
 cd portable
 ./autogen.sh
 ./configure --prefix=${INSTALLDIR} --host=mips-linux-gnu --with-pic
+make clean
 make -j4
 make install
