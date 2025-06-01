@@ -11,6 +11,7 @@ RUN \
   libtool \
   ftp-upload \
   wget \
+  unzip \
   cmake && \
   rm -rf /var/lib/apt/lists/*
 
