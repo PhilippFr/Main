@@ -12,8 +12,9 @@ if [ ! -d "mDNSResponder-${VERSION}/" ]
 then
     wget "https://opensource.apple.com/tarballs/mDNSResponder/mDNSResponder-${VERSION}.tar.gz"
     tar xvfz "mDNSResponder-${VERSION}.tar.gz" --exclude='._*'
+    mv mDNSResponder-mDNSResponder-${VERSION}/mDNSResponder-${VERSION} mDNSResponder-${VERSION}
     rm "mDNSResponder-${VERSION}.tar.gz"
-    patch -d "mDNSResponder-${VERSION}/" -p1 <unicast.patch
+    patch -d "." -p0 < unicast.patch
 fi
 
 cd "mDNSResponder-${VERSION}/mDNSPosix"
