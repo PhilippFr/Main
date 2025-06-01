@@ -13,10 +13,6 @@ cd busybox
 make clean
 make CROSS_COMPILE=$CROSS_COMPILE defconfig
 
-# Add fallback for CLOCK_BOOTTIME
-sed -i '/#include <time.h>/a \
-#ifndef CLOCK_BOOTTIME\n#define CLOCK_BOOTTIME CLOCK_MONOTONIC\n#endif' miscutils/seedrng.c
-
 sleep 1 # ensure timestamp delta
 
 #Remove some packages that doesn't compile
